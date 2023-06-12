@@ -1,52 +1,137 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
 }
 
-.header {
+body {
+  font-family: "Roboto", sans-serif;
+  background: #333;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.slider {
   position: relative;
-  width: 100%;
-  height: 500px;
   overflow: hidden;
-}
-
-.slide-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+  height: 100vh;
+  width: 100vw;
 }
 
 .slide {
-  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
 }
 
-.controls {
-  position: fixed;
-  top: 50%;
-  width: 40%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  z-index: 1;
+.slide.atual {
+  opacity: 1;
 }
 
-.control-button {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.5);
+.slide .content {
+  position: absolute;
+  bottom: 70px;
+  left: -600px;
+  opacity: 0;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  padding: 35px;
+}
+
+.slide .content h1 {
+  margin-bottom: 10px;
+}
+
+.slide.atual .content {
+  opacity: 1;
+  transform: translateX(600px);
+  transition: all 0.7s ease-in-out 0.3s;
+}
+
+.buttons button#next {
+  position: absolute;
+  top: 40%;
+  right: 15px;
+}
+
+.buttons button#prev {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+}
+
+.buttons button {
+  font-size: 2rem;
+  border: 2px solid #fff;
+  background-color: transparent;
   color: #fff;
-  border: none;
-  border-radius: 50%;
-  font-size: 20px;
   cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
 }
 
-.content {
-  background-color: #f5f5f5;
-  padding: 20px;
+.buttons button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+@media (max-width: 500px) {
+  .slide .content {
+    bottom: -300px;
+    left: 0;
+    width: 100%;
+  }
+
+  .slide.atual .content {
+    transform: translateY(-300px);
+  }
+}
+
+/* Backgorund Images */
+.slide:first-child {
+  background: url("batman1.webp") no-repeat center top/cover;
+}
+
+.slide:nth-child(2) {
+  background: url("batman2.webp") no-repeat center top/cover;
+}
+
+.slide:nth-child(3) {
+  background: url("batman3.webp") no-repeat center top/cover;
+}
+
+.slide:nth-child(4) {
+  background: url("batman4.webp") no-repeat center top/cover;
+}
+
+.slide:nth-child(5) {
+  background: url("batman5.webp") no-repeat center top/cover;
+}
+
+.slide:nth-child(6) {
+  background: url("batman6.webp") no-repeat center center/cover;
+}
+
+.slide:nth-child(7) {
+  background: url("batman7.webp") no-repeat center center/cover;
+}
+
+.slide:nth-child(8) {
+  background: url("batman8.webp") no-repeat center center/cover;
+}
+
+.slide:nth-child(9) {
+  background: url("batman9.webp") no-repeat center center/cover;
+}
+
+.slide:nth-child(10) {
+  background: url("batman10.jpg") no-repeat center center/cover;
 }

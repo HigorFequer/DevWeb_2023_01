@@ -1,7 +1,0 @@
-Exemplo de entidades em HTML
-
-Escrevendo espaços
-Caractere menor do que: 
-Caractere maior do que: 
-Caractere copyright: 
-Caractere marca registrada: 
